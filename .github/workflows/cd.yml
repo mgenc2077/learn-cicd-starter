@@ -32,4 +32,7 @@ jobs:
         - name: 'gcloud build'
           run: 'gcloud builds submit --tag us-central1-docker.pkg.dev/propane-facet-454711-k5/notely-ar-repo/notely:latest .'
 
+        - name: 'Deploy to Cloud Run'
+          run: 'gcloud run deploy notely --image us-central1-docker.pkg.dev/propane-facet-454711-k5/notely-ar-repo/notely:latest --region us-central1 --allow-unauthenticated --project propane-facet-454711-k5 --max-instances=4'
+
         
